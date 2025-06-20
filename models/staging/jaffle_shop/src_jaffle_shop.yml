@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: JAFFLE_SHOP
+    description: a clone of a snowflake application database
+    database: TIL_PORTFOLIO_PROJECTS
+    schema: DBT_CY_JAFFLE_SHOP
+    tables:
+      - name: CUSTOMERS
+        description: raw customers data
+        columns:
+            - name: id
+              description: primary key for customers data
+      - name: ORDERS
