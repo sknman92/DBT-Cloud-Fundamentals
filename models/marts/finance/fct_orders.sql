@@ -1,19 +1,8 @@
-{{
-    config(
-        materialized='incremental',
-        unique_key = 'order_id',
-        incremental_strategy = 'merge',
-        on_schema_change = 'fail'
-        
-    )
-}}
-
-
 WITH payments as (SELECT order_id, payment_amount
                   FROM {{ ref('stg_stripe__payments') }} ),
 
 orders as (SELECT order_id, customer_id, order_placed_at
-           FROM {{ ref('stg_jaffle_shop__orders') }} )
+           FROM {{ ref('stg_jaffle_shop__orders') }} )  
 
 SELECT o.order_id, o.order_placed_at, customer_id, payment_amount
 FROM orders as o
