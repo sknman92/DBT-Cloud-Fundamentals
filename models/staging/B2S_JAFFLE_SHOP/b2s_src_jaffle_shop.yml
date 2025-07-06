@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: B2S_JAFFLE_SHOP
+    database: TIL_PORTFOLIO_PROJECTS
+    schema: DBT_CY_JAFFLE_SHOP
+    tables:
+      - name: ORDERS
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _etl_loaded_at
+      - name: CUSTOMERS

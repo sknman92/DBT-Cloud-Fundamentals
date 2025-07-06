@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: B2S_JAFFLE_SHOP
-    database: TIL_PORTFOLIO_PROJECTS
-    schema: DBT_CY_JAFFLE_SHOP
-    tables:
-      - name: ORDERS

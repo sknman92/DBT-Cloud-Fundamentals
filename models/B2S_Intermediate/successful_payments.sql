@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='ephemeral'
+    )
+}}
+
 with source_cte as(select *
 from {{ ref('stg_stripe__payments') }}),
 
