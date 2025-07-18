@@ -42,6 +42,3 @@ models:
       +materialized: view # 
     marts:
       +materialized: table # tables are better for frequently queried
-    B2S_Mart:
-      +materialized: table
-    
