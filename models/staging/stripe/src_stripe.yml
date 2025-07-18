@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: STRIPE
     database: TIL_PORTFOLIO_PROJECTS
-    schema: DBT_CY_STRIPE
+    schema: STRIPE
     tables:
       - name: PAYMENT
         loaded_at_field: _batched_at
