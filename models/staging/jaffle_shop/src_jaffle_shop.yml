@@ -12,3 +12,13 @@ sources:
             - name: id
               description: primary key for customers data
       - name: ORDERS
+  - name: JAFFLE_SHOP_LONG
+    description: jaffle shop extended for dbt mesh course
+    schema: JAFFLE_SHOP_6_YEARS
+    tables:
+      - name: RAW_CUSTOMERS
+      - name: RAW_ITEMS
+      - name: RAW_ORDERS
+      - name: RAW_PRODUCTS
+      - name: RAW_STORES
+      - name: RAW_SUPPLIES
