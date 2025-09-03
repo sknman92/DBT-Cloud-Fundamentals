@@ -5,7 +5,9 @@ models:
         enforced: true
     columns:
       - name: order_id
-        data_type: float
+        data_type: number
+        constraints:
+          - type: not_null 
       - name: order_placed_at
         data_type: date
       - name: customer_id

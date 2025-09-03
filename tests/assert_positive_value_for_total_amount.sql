@@ -15,5 +15,5 @@ WHERE sum_amount < 0
 
 select *
 from select_cte
-
+ 
 
