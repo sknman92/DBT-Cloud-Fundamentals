@@ -10,7 +10,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: stg_jaffle_shop__orders 
+  - name: stg_jaffle_shop__orders
     description: one order per row
     columns: 
       - name: order_id
@@ -19,7 +19,7 @@ models:
           - unique
           - not_null
       - name: order_status
-        description: "{{ doc('order_status')}}"
+        description: "{{ doc('order_status')}}" 
         tests:
           - accepted_values:
               values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']

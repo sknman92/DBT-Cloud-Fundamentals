@@ -1,17 +1,35 @@
 version: 2
 
 sources:
-  - name: JAFFLE_SHOP
+  - name: JAFFLE_SHOP # alias to call when ref in models
     description: a clone of a snowflake application database
     database: TIL_PORTFOLIO_PROJECTS
     schema: JAFFLE_SHOP
+    config:
+      freshness:
+        warn_after:
+          count: 6
+          period: hour
+      loaded_at_field: _etl_loaded_at
     tables:
       - name: CUSTOMERS
         description: raw customers data
         columns:
             - name: id
               description: primary key for customers data
+              data_tests:
+                - unique
+                - not_null
+        config:
+          freshness: null
       - name: ORDERS
+        description: raw orders data
+        columns:
+          - name: id
+            description: primary key for orders data 
+            data_tests:
+              - unique
+              - not_null              
   - name: JAFFLE_SHOP_LONG
     description: jaffle shop extended for dbt mesh course
     schema: JAFFLE_SHOP_6_YEARS
