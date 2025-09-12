@@ -4,12 +4,12 @@ sources:
   - name: STRIPE
     database: TIL_PORTFOLIO_PROJECTS
     schema: STRIPE
-    tables:
-      - name: PAYMENT
-        loaded_at_field: _batched_at
-        config:
+    config:
           freshness:
             warn_after: 
               count: 12
               period: hour
-          
+    tables:
+      - name: PAYMENT
+        loaded_at_field: _batched_at
+        
