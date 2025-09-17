@@ -2,17 +2,17 @@
 
     {% set default_schema=target.schema %}
     {%- set env = env_var('DBT_ENV_NAME') -%}
-    {% if custom_schema_name is none or env == 'prod' %}
+    {% if custom_schema_name is none or env == 'dev' %}
 
         {{default_schema}}
 
     {% elif target.name in ['prod']%}
 
-        {{custom_schema_name | trim}}
+        {{default_schema | trim}}
 
     {% else %}
 
-        {{default_schema}}_{{custom_schema_name | trim}}
+        {{custom_schema_name | trim}}
         
     {% endif %}
     

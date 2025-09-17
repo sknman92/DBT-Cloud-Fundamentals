@@ -40,6 +40,8 @@ models:
     # Applies to all files under models
     staging:
       +materialized: view # 
+      +schema: DBT_CY_STG
     marts:
       +materialized: table # tables are better for frequently queried
+
     
