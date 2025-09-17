@@ -12,7 +12,7 @@
 
     {% else %}
 
-        {{custom_schema_name | trim}}
+        {{default_schema | trim}}
         
     {% endif %}
     
