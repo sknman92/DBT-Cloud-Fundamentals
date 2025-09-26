@@ -21,6 +21,8 @@ with payments as
     {% endfor %}
 
     from payments
+
+    group by order_id
 )
 
 select *
