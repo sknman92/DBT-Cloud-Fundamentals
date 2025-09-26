@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 WITH payments as (SELECT order_id, payment_amount
                   FROM {{ ref('stg_stripe__payments') }} ),
 
@@ -14,7 +20,7 @@ ON o.order_id = p.order_id
     -- this filter will only be applied on an incremental run
     where  order_placed_at >= (select max(order_placed_at) from {{ this }}) 
 {% endif %}
-
+  
 
 
 

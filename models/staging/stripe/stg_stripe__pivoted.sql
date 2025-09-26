@@ -21,3 +21,7 @@ with payments as
     {% endfor %}
 
     from payments
+)
+
+select *
+from pivoted
