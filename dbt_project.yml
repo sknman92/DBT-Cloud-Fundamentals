@@ -39,7 +39,7 @@ models:
   jaffle_shop: # must match project name in line 5
     # Applies to all files under models
     staging:
-      +materialized: view # 
+      +materialized: view # doesn't store data, only query
       +schema: DBT_CY_STG
     marts:
       +materialized: table # tables are better for frequently queried
