@@ -11,10 +11,10 @@ with payments as
     {%- for p in payment_methods -%}
 
         {%- if not loop.last -%}
-            sum(case when payment_method = '{{p}}' then amount else 0 end) as {{p}}_amount,
+            sum(case when payment_method = '{{p}}' then payment_amount else 0 end) as {{p}}_amount,
 
         {%- else -%}
-            sum(case when payment_method = '{{p}}' then amount else 0 end) as {{p}}_amount
+            sum(case when payment_method = '{{p}}' then payment_amount else 0 end) as {{p}}_amount
             
         {% endif %}
 
