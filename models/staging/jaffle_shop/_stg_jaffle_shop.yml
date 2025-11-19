@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_jaffle_shop__customers # name of the model
     description: one unique customer per row
-    columns: 
+    columns:
       - name: customer_id
         # can add materialization config here
         description: primary key
@@ -12,22 +12,21 @@ models:
           - not_null
   - name: stg_jaffle_shop__orders
     description: one order per row
-    columns: 
+    columns:
       - name: order_id
         description: primary key
-        tests: 
+        tests:
           - unique
           - not_null
       - name: order_status
-        description: "{{ doc('order_status')}}" 
+        description: "{{ doc('order_status')}}"
         tests:
           - accepted_values:
-              values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
+              arguments:
+                values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
       - name: customer_id
         tests:
           - relationships:
-              to: ref('stg_jaffle_shop__customers')
-              field: customer_id
-      
-    
-        
+              arguments:
+                to: ref('stg_jaffle_shop__customers')
+                field: customer_id

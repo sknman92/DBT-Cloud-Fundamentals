@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ax_source
+    description: alteryx challenge data source
+    schema: DBT_CY
+    tables:
+      - name: AX_492
+      - name: AX_487a
+      - name: AX_487b
+      - name: AX_490

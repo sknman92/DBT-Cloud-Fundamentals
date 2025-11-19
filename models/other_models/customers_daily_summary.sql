@@ -1,5 +1,5 @@
 select
-    {{dbt_utils.surrogate_key(['customer_id', 'order_placed_at'])}} as id
+    {{dbt_utils.generate_surrogate_key(['customer_id', 'order_placed_at'])}} as id
     , customer_id
     , order_placed_at
     , count(*) as count
